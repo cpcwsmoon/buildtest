@@ -11,13 +11,13 @@
     <script>
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/buildtest.json", { onProgress: UnityProgress });
     </script>
-    <script>
+    <script type="text/javascript">
         function Reset()
         {
             var canvas = document.getElementById("#canvas");//获取#canvas
             canvas.height = document.documentElement.clientHeight;//获取body可见区域高度
             canvas.width = document.documentElement.clientWidth;//获取body可见区域高度
-
+            console.log(canvas.width);
         }
     </script>
 </head>
