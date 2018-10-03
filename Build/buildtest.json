@@ -1,0 +1,13 @@
+{
+"companyName": "cpcw",
+"productName": "DBTest",
+"dataUrl": "buildtest.data.unityweb",
+"asmCodeUrl": "buildtest.asm.code.unityweb",
+"asmMemoryUrl": "buildtest.asm.memory.unityweb",
+"asmFrameworkUrl": "buildtest.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
