@@ -103,20 +103,6 @@ lib.webfontAvailable = function(family) {
 
 
 
-(lib.tuach = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// 图层 1
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(96,217,236,0)").s().p("Eg7/BquMAAAjVbMB3+AAAMAAADVbg");
-	this.shape.setTransform(384,683);
-
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,768,1366);
-
-
 (lib.矩形2拷贝2_1 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -366,6 +352,25 @@ p.nominalBounds = new cjs.Rectangle(-124,0,768,1366);
 
 	// timeline functions:
 	this.frame_0 = function() {
+		this.stop();
+		
+		/* 单击以转到帧并播放
+		单击指定的元件实例会将播放头移动到时间轴中的指定帧并继续从该帧回放。
+		可在主时间轴或影片剪辑时间轴上使用。
+		
+		说明:
+		1. 单击元件实例时，用希望播放头移动到的帧编号替换以下代码中的数字 5。
+		2. EaselJS 中的帧编号从 0 开始而不是从 1 开始
+		*/
+		
+		this.touch.addEventListener("click", P1.bind(this));
+		
+		function P1()
+		{
+			this.gotoAndPlay(2);
+		}
+	}
+	this.frame_24 = function() {
 		/* 在此帧处停止
 		时间轴将在插入此代码的帧处停止/暂停。
 		也可用于停止/暂停影片剪辑的时间轴。
@@ -382,23 +387,9 @@ p.nominalBounds = new cjs.Rectangle(-124,0,768,1366);
 		2. EaselJS 中的帧编号从 0 开始而不是从 1 开始
 		*/
 		
-		this.touch.addEventListener("click", fl_ClickToGoToAndPlayFromFrame.bind(this));
+		this.touch.addEventListener("click", fl_ClickToGoToAndPlayFromFrame_2.bind(this));
 		
-		function fl_ClickToGoToAndPlayFromFrame()
-		{
-			this.gotoAndPlay(2);
-		}
-	}
-	this.frame_24 = function() {
-		/* 在此帧处停止
-		时间轴将在插入此代码的帧处停止/暂停。
-		也可用于停止/暂停影片剪辑的时间轴。
-		*/
-		
-		this.stop();
-		this.touch.addEventListener("click", fl_ClickToGoToAndPlayFromFrame.bind(this));
-		
-		function fl_ClickToGoToAndPlayFromFrame()
+		function fl_ClickToGoToAndPlayFromFrame_2()
 		{
 			this.gotoAndPlay(26);
 		}
@@ -406,12 +397,6 @@ p.nominalBounds = new cjs.Rectangle(-124,0,768,1366);
 
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(24).call(this.frame_24).wait(26));
-
-	// 图层 26
-	this.touch = new lib.tuach();
-	this.touch.setTransform(384,683,1,1,0,0,0,384,683);
-
-	this.timeline.addTween(cjs.Tween.get(this.touch).wait(50));
 
 	// Status Bar
 	this.instance = new lib.StatusBar_1();
@@ -526,19 +511,19 @@ p.nominalBounds = new cjs.Rectangle(-124,0,768,1366);
 	this.instance_1 = new lib.logo_3();
 	this.instance_1.setTransform(384,640,1,1,0,0,0,115,115);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1).to({y:613.9,alpha:0.929},0).wait(1).to({y:587.9,alpha:0.857},0).wait(1).to({y:561.8,alpha:0.786},0).wait(1).to({y:535.7,alpha:0.714},0).wait(1).to({y:509.6,alpha:0.643},0).wait(1).to({y:483.6,alpha:0.571},0).wait(1).to({y:457.5,alpha:0.5},0).wait(1).to({y:431.4,alpha:0.429},0).wait(1).to({y:405.4,alpha:0.357},0).wait(1).to({y:379.3,alpha:0.286},0).wait(1).to({y:353.2,alpha:0.214},0).wait(1).to({y:327.2,alpha:0.143},0).wait(1).to({y:301.1,alpha:0.071},0).wait(1).to({y:275,alpha:0},0).wait(22).to({y:301.1,alpha:0.071},0).wait(1).to({y:327.1,alpha:0.143},0).wait(1).to({y:353.2,alpha:0.214},0).wait(1).to({y:379.3,alpha:0.286},0).wait(1).to({y:405.4,alpha:0.357},0).wait(1).to({y:431.4,alpha:0.429},0).wait(1).to({y:457.5,alpha:0.5},0).wait(1).to({y:483.6,alpha:0.571},0).wait(1).to({y:509.6,alpha:0.643},0).wait(1).to({y:535.7,alpha:0.714},0).wait(1).to({y:561.8,alpha:0.786},0).wait(1).to({y:587.8,alpha:0.857},0).wait(1).to({y:613.9,alpha:0.929},0).wait(1).to({y:640,alpha:1},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(1).to({y:614,alpha:0.922},0).wait(1).to({y:587.9,alpha:0.852},0).wait(1).to({y:561.8,alpha:0.781},0).wait(1).to({y:535.8,alpha:0.711},0).wait(1).to({y:509.7,alpha:0.641},0).wait(1).to({y:483.6,alpha:0.57},0).wait(1).to({y:457.5,alpha:0.5},0).wait(1).to({y:431.5,alpha:0.422},0).wait(1).to({y:405.4,alpha:0.352},0).wait(1).to({y:379.3,alpha:0.281},0).wait(1).to({y:353.3,alpha:0.211},0).wait(1).to({y:327.2,alpha:0.141},0).wait(1).to({y:301.1,alpha:0.07},0).wait(1).to({y:275,alpha:0},0).wait(22).to({y:301.1,alpha:0.07},0).wait(1).to({y:327.1,alpha:0.141},0).wait(1).to({y:353.2,alpha:0.211},0).wait(1).to({y:379.3,alpha:0.281},0).wait(1).to({y:405.4,alpha:0.352},0).wait(1).to({y:431.4,alpha:0.422},0).wait(1).to({y:457.5,alpha:0.488},0).wait(1).to({y:483.6,alpha:0.57},0).wait(1).to({y:509.6,alpha:0.641},0).wait(1).to({y:535.7,alpha:0.711},0).wait(1).to({y:561.8,alpha:0.781},0).wait(1).to({y:587.9,alpha:0.852},0).wait(1).to({y:613.9,alpha:0.922},0).wait(1).to({y:640,alpha:1},0).wait(1));
 
 	// up
 	this.instance_2 = new lib.up_1();
 	this.instance_2.setTransform(383,559,1,1,0,0,0,385,562);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(1).to({y:508.2},0).wait(1).to({y:457.4},0).wait(1).to({y:406.5},0).wait(1).to({y:355.7},0).wait(1).to({y:304.9},0).wait(1).to({y:254},0).wait(1).to({y:203.2},0).wait(1).to({y:152.3},0).wait(1).to({y:101.5},0).wait(1).to({y:50.7},0).wait(1).to({y:-0.2},0).wait(1).to({y:-51},0).wait(1).to({y:-101.8},0).wait(1).to({y:-152.6},0).wait(1).to({y:-203.5},0).wait(1).to({y:-254.4},0).wait(1).to({y:-305.2},0).wait(1).to({alpha:0.857},0).wait(1).to({alpha:0.714},0).wait(1).to({alpha:0.571},0).wait(1).to({alpha:0.429},0).wait(1).to({alpha:0.286},0).wait(1).to({alpha:0.143},0).wait(1).to({alpha:0},0).wait(2).to({y:-254.4,alpha:0.143},0).wait(1).to({y:-203.5,alpha:0.286},0).wait(1).to({y:-152.7,alpha:0.429},0).wait(1).to({y:-101.8,alpha:0.571},0).wait(1).to({y:-51,alpha:0.714},0).wait(1).to({y:-0.2,alpha:0.857},0).wait(1).to({y:50.6,alpha:1},0).wait(1).to({y:101.5},0).wait(1).to({y:152.3},0).wait(1).to({y:203.2},0).wait(1).to({y:254},0).wait(1).to({y:304.9},0).wait(1).to({y:355.6},0).wait(1).to({y:406.5},0).wait(1).to({y:457.3},0).wait(1).to({y:508.2},0).wait(1).to({y:559},0).wait(8));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(1).to({y:508.2},0).wait(1).to({y:457.4},0).wait(1).to({y:406.5},0).wait(1).to({y:355.7},0).wait(1).to({y:304.9},0).wait(1).to({y:254},0).wait(1).to({y:203.2},0).wait(1).to({y:152.3},0).wait(1).to({y:101.5},0).wait(1).to({y:50.7},0).wait(1).to({y:-0.2},0).wait(1).to({y:-51},0).wait(1).to({y:-101.8},0).wait(1).to({y:-152.7},0).wait(1).to({y:-203.5},0).wait(1).to({y:-254.4},0).wait(1).to({y:-305.2},0).wait(1).to({alpha:0.852},0).wait(1).to({alpha:0.711},0).wait(1).to({alpha:0.57},0).wait(1).to({alpha:0.422},0).wait(1).to({alpha:0.281},0).wait(1).to({alpha:0.141},0).wait(1).to({alpha:0},0).wait(2).to({y:-254.4,alpha:0.141},0).wait(1).to({y:-203.6,alpha:0.281},0).wait(1).to({y:-152.7,alpha:0.422},0).wait(1).to({y:-101.9,alpha:0.57},0).wait(1).to({y:-51.1,alpha:0.711},0).wait(1).to({y:-0.2,alpha:0.852},0).wait(1).to({y:50.6,alpha:1},0).wait(1).to({y:101.5},0).wait(1).to({y:152.3},0).wait(1).to({y:203.1},0).wait(1).to({y:254},0).wait(1).to({y:304.8},0).wait(1).to({y:355.6},0).wait(1).to({y:406.5},0).wait(1).to({y:457.3},0).wait(1).to({y:508.2},0).wait(1).to({y:559},0).wait(8));
 
 	// down
 	this.instance_3 = new lib.down_1();
 	this.instance_3.setTransform(383,804,1,1,0,0,0,385,562);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1).to({y:867.6},0).wait(1).to({y:931.3},0).wait(1).to({y:994.9},0).wait(1).to({y:1058.6},0).wait(1).to({y:1122.2},0).wait(1).to({y:1185.8},0).wait(1).to({y:1249.4},0).wait(1).to({y:1313.1},0).wait(1).to({y:1376.8},0).wait(1).to({y:1440.4},0).wait(1).to({y:1504.1},0).wait(1).to({y:1567.7},0).wait(1).to({y:1631.3},0).wait(1).to({y:1694.9},0).wait(1).to({y:1758.6},0).wait(1).to({y:1822.3},0).wait(1).to({y:1885.9},0).wait(1).to({alpha:0.857},0).wait(1).to({alpha:0.714},0).wait(1).to({alpha:0.571},0).wait(1).to({alpha:0.429},0).wait(1).to({alpha:0.286},0).wait(1).to({alpha:0.143},0).wait(1).to({alpha:0},0).wait(2).to({alpha:0.143},0).wait(1).to({alpha:0.286},0).wait(1).to({alpha:0.429},0).wait(1).to({alpha:0.571},0).wait(1).to({alpha:0.714},0).wait(1).to({alpha:0.857},0).wait(1).to({alpha:1},0).wait(1).to({y:1822.3},0).wait(1).to({y:1758.6},0).wait(1).to({y:1695},0).wait(1).to({y:1631.3},0).wait(1).to({y:1567.7},0).wait(1).to({y:1504.1},0).wait(1).to({y:1440.5},0).wait(1).to({y:1376.8},0).wait(1).to({y:1313.1},0).wait(1).to({y:1249.5},0).wait(1).to({y:1185.8},0).wait(1).to({y:1122.2},0).wait(1).to({y:1058.6},0).wait(1).to({y:995},0).wait(1).to({y:931.3},0).wait(1).to({y:867.6},0).wait(1).to({y:804},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(1).to({y:867.6},0).wait(1).to({y:931.3},0).wait(1).to({y:994.9},0).wait(1).to({y:1058.6},0).wait(1).to({y:1122.2},0).wait(1).to({y:1185.8},0).wait(1).to({y:1249.5},0).wait(1).to({y:1313.1},0).wait(1).to({y:1376.8},0).wait(1).to({y:1440.4},0).wait(1).to({y:1504.1},0).wait(1).to({y:1567.7},0).wait(1).to({y:1631.3},0).wait(1).to({y:1695},0).wait(1).to({y:1758.6},0).wait(1).to({y:1822.3},0).wait(1).to({y:1885.9},0).wait(1).to({alpha:0.852},0).wait(1).to({alpha:0.711},0).wait(1).to({alpha:0.57},0).wait(1).to({alpha:0.422},0).wait(1).to({alpha:0.281},0).wait(1).to({alpha:0.141},0).wait(1).to({alpha:0},0).wait(2).to({alpha:0.141},0).wait(1).to({alpha:0.281},0).wait(1).to({alpha:0.422},0).wait(1).to({alpha:0.57},0).wait(1).to({alpha:0.711},0).wait(1).to({alpha:0.852},0).wait(1).to({alpha:1},0).wait(1).to({y:1822.3},0).wait(1).to({y:1758.7},0).wait(1).to({y:1695},0).wait(1).to({y:1631.4},0).wait(1).to({y:1567.7},0).wait(1).to({y:1504.1},0).wait(1).to({y:1440.5},0).wait(1).to({y:1376.8},0).wait(1).to({y:1313.2},0).wait(1).to({y:1249.5},0).wait(1).to({y:1185.9},0).wait(1).to({y:1122.3},0).wait(1).to({y:1058.6},0).wait(1).to({y:995},0).wait(1).to({y:931.3},0).wait(1).to({y:867.7},0).wait(1).to({y:804},0).wait(1));
 
 	// 图层 23
 	this.instance_4 = new lib.logo_2();
@@ -554,13 +539,13 @@ p.nominalBounds = new cjs.Rectangle(-124,0,768,1366);
 	this.instance_6.setTransform(384,683.1,0.9,0.9,0,0,0,260,683.1);
 	this.instance_6._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_6).wait(7).to({_off:false},0).wait(1).to({regX:259,regY:946,scaleX:0.91,scaleY:0.91,x:383.1,y:921.2},0).wait(1).to({scaleX:0.91,scaleY:0.91,y:922.7},0).wait(1).to({scaleX:0.92,scaleY:0.92,y:924.3},0).wait(1).to({scaleX:0.92,scaleY:0.92,y:925.8},0).wait(1).to({scaleX:0.93,scaleY:0.93,y:927.4},0).wait(1).to({scaleX:0.94,scaleY:0.94,y:929},0).wait(1).to({scaleX:0.94,scaleY:0.94,x:383,y:930.5},0).wait(1).to({scaleX:0.95,scaleY:0.95,x:383.1,y:932},0).wait(1).to({scaleX:0.95,scaleY:0.95,x:383,y:933.6},0).wait(1).to({scaleX:0.96,scaleY:0.96,x:383.1,y:935.1},0).wait(1).to({scaleX:0.97,scaleY:0.97,x:383,y:936.7},0).wait(1).to({scaleX:0.97,scaleY:0.97,y:938.2},0).wait(1).to({scaleX:0.98,scaleY:0.98,y:939.8},0).wait(1).to({scaleX:0.98,scaleY:0.98,y:941.3},0).wait(1).to({scaleX:0.99,scaleY:0.99,y:942.9},0).wait(1).to({scaleX:0.99,scaleY:0.99,y:944.5},0).wait(1).to({scaleX:1,scaleY:1,y:946},0).wait(1).to({regX:260,regY:683,x:384,y:683},0).wait(1).to({regX:259,regY:946,scaleX:0.99,scaleY:0.99,x:383,y:944.5},0).wait(1).to({scaleX:0.99,scaleY:0.99,y:942.9},0).wait(1).to({scaleX:0.98,scaleY:0.98,y:941.3},0).wait(1).to({scaleX:0.98,scaleY:0.98,y:939.8},0).wait(1).to({scaleX:0.97,scaleY:0.97,y:938.2},0).wait(1).to({scaleX:0.97,scaleY:0.97,y:936.7},0).wait(1).to({scaleX:0.96,scaleY:0.96,x:383.1,y:935.2},0).wait(1).to({scaleX:0.95,scaleY:0.95,x:383,y:933.6},0).wait(1).to({scaleX:0.95,scaleY:0.95,x:383.1,y:932},0).wait(1).to({scaleX:0.94,scaleY:0.94,x:383,y:930.5},0).wait(1).to({scaleX:0.94,scaleY:0.94,x:383.1,y:929},0).wait(1).to({scaleX:0.93,scaleY:0.93,y:927.4},0).wait(1).to({scaleX:0.92,scaleY:0.92,y:925.8},0).wait(1).to({scaleX:0.92,scaleY:0.92,y:924.3},0).wait(1).to({scaleX:0.91,scaleY:0.91,y:922.7},0).wait(1).to({scaleX:0.91,scaleY:0.91,y:921.2},0).wait(1).to({scaleX:0.9,scaleY:0.9,y:919.7},0).to({_off:true},1).wait(7));
+	this.timeline.addTween(cjs.Tween.get(this.instance_6).wait(7).to({_off:false},0).wait(1).to({regX:259.9,scaleX:0.91,scaleY:0.91},0).wait(1).to({regX:260,scaleX:0.91,scaleY:0.91,y:683},0).wait(1).to({regX:259.9,scaleX:0.92,scaleY:0.92,y:683.1},0).wait(1).to({regX:260.1,scaleX:0.92,scaleY:0.92,x:384.1},0).wait(1).to({regX:260,regY:683,scaleX:0.93,scaleY:0.93,x:384,y:683},0).wait(1).to({regX:259.9,regY:683.1,scaleX:0.94,scaleY:0.94,y:683.1},0).wait(1).to({regX:260,scaleX:0.94,scaleY:0.94,y:683},0).wait(1).to({regX:259.9,scaleX:0.95,scaleY:0.95},0).wait(1).to({regX:260.1,scaleX:0.95,scaleY:0.95,x:384.1},0).wait(1).to({regX:260,scaleX:0.96,scaleY:0.96,x:384},0).wait(1).to({scaleX:0.97,scaleY:0.97},0).wait(1).to({scaleX:0.97,scaleY:0.97,y:683.1},0).wait(1).to({scaleX:0.98,scaleY:0.98,x:384.1,y:683},0).wait(1).to({regX:260.1,scaleX:0.98,scaleY:0.98},0).wait(1).to({regX:260,scaleX:0.99,scaleY:0.99,y:683.1},0).wait(1).to({regY:683,scaleX:0.99,scaleY:0.99,x:384,y:683},0).wait(1).to({regY:683.1,scaleX:1,scaleY:1,y:683.1},0).wait(1).to({regY:683,y:683},0).wait(1).to({regX:260.1,scaleX:0.99,scaleY:0.99,x:384.1},0).wait(1).to({regX:260,scaleX:0.99,scaleY:0.99,x:384},0).wait(1).to({scaleX:0.98,scaleY:0.98},0).wait(1).to({regX:259.9,scaleX:0.98,scaleY:0.98},0).wait(1).to({regX:260,scaleX:0.97,scaleY:0.97},0).wait(1).to({regX:260.1,scaleX:0.97,scaleY:0.97,x:384.1},0).wait(1).to({regX:260,scaleX:0.96,scaleY:0.96,x:384},0).wait(1).to({scaleX:0.95,scaleY:0.95},0).wait(1).to({regX:259.9,scaleX:0.95,scaleY:0.95},0).wait(1).to({regX:260,scaleX:0.94,scaleY:0.94},0).wait(1).to({regX:259.9,scaleX:0.94,scaleY:0.94},0).wait(1).to({regX:260,scaleX:0.93,scaleY:0.93},0).wait(1).to({regX:260.1,scaleX:0.92,scaleY:0.92,x:384.1},0).wait(1).to({regX:259.9,scaleX:0.92,scaleY:0.92,x:384},0).wait(1).to({regX:260,scaleX:0.91,scaleY:0.91},0).wait(1).to({regX:259.9,scaleX:0.91,scaleY:0.91},0).wait(1).to({regX:260,scaleX:0.9,scaleY:0.9},0).to({_off:true},1).wait(7));
 
 	// 矩形 1
-	this.instance_7 = new lib.矩形1_1();
-	this.instance_7.setTransform(384,683,1,1,0,0,0,384,683);
+	this.touch = new lib.矩形1_1();
+	this.touch.setTransform(384,683,1,1,0,0,0,384,683);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(50));
+	this.timeline.addTween(cjs.Tween.get(this.touch).wait(50));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(382,680,770,1369);
